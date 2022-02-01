@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    if: ${{ github.event.label.name == 'labeled' }}
+    if: contains(github.event.pull_request.labels.*.name, 'stage')
     runs-on: ubuntu-latest
     
     steps:
